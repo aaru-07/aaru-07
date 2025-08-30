@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <script>
+            function toggleTheme() {
+                const body = document.body;
+                const iconElement = document.querySelector('.theme-toggle i');
+                
+                body.classList.toggle('light-mode');
+                
+                // Update icon based on current theme
+                if (body.classList.contains('light-mode')) {
+                    iconElement.classList.remove('fa-moon');
+                    iconElement.classList.add('fa-sun');
+                } else {
+                    iconElement.classList.remove('fa-sun');
+                    iconElement.classList.add('fa-moon');
+                }
+            }
+
+            // Set initial icon based on system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+            }
+        </script>
+        <main class="elegant-hero">
+            <div class="elegant-hero-bg"></div>
+            <div class="elegant-hero-content">
+                <img class="elegant-hero-img" src="images/main.jpg" alt="Aarushi Kumari portrait">
+                <div class="elegant-hero-text">
+                    <h1 class="elegant-title">Aarushi Kumari</h1>
+                    <h2 class="elegant-subtitle">Web Developer & Designer</h2>
+                    <p class="elegant-desc">
+                        I craft beautiful, modern websites with a touch of elegance and a lot of heart.<br>
+                        Let’s build something amazing together!
+                    </p>
+                    <div class="elegant-socials">
+                        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="#" class="btn elegant-cta">Let’s Connect</a>
+                </div>
+            </div>
+        </main>
+       
+
+</section>
+ 
+    
+</body>
+</html>
